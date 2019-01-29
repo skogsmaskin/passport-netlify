@@ -35,7 +35,7 @@ describe('Strategy', () => {
     strategy.userProfile('jibberishAccessToken', done)
     expect(theProfile).toEqual({
       _json: { avatar_url: null, email: 'test@test.com', full_name: 'Test', id: '1234' },
-      _raw: '[{"id": "1234", "full_name": "Test", "email": "test@test.com", "avatar_url": null}]',
+      _raw: '{"id": "1234", "full_name": "Test", "email": "test@test.com", "avatar_url": null}',
       displayName: 'Test',
       emails: [{ value: 'test@test.com' }],
       id: '1234',

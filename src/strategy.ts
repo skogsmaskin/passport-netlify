@@ -5,7 +5,7 @@ import APIError from './apiError'
 
 const STRATEGY_NAME = 'netlify'
 const PROVIDER_NAME = 'netlify'
-const USER_PROFILE_URL = 'https://api.netlify.com/api/v1/users'
+const USER_PROFILE_URL = 'https://api.netlify.com/api/v1/user'
 const AUTHORIZATION_URL = 'https://app.netlify.com/authorize'
 const TOKEN_URL = 'https://api.netlify.com/oauth/token'
 
@@ -50,13 +50,10 @@ export default class Strategy extends OAuth2Strategy {
       } catch (_) {
         return done(new Error('Failed to parse user profile (invalid JSON)'))
       }
-      if (!Array.isArray(json)) {
-        return done(new Error('Failed to read user profile data, expected array'))
-      }
-      const profile = parseUserProfile(json[0])
+      const profile = parseUserProfile(json)
       profile.provider = PROVIDER_NAME
       profile._raw = _body
-      profile._json = json[0]
+      profile._json = json
       done(null, profile)
     })
   }
