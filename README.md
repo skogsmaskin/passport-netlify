@@ -1,5 +1,7 @@
 # passport-netlify
 
+[![Build Status](https://travis-ci.com/skogsmaskin/passport-netlify.svg?branch=master)](https://travis-ci.com/skogsmaskin/passport-netlify)
+
 [Passport](http://passportjs.org/) strategy for authenticating with
 [Netlify](https://www.netlify.com/) using the OAuth 2.0 API.
 
