@@ -1,9 +1,8 @@
 # passport-netlify
-
-[![Build Status](https://travis-ci.com/skogsmaskin/passport-netlify.svg?branch=master)](https://travis-ci.com/skogsmaskin/passport-netlify)
-
 [Passport](http://passportjs.org/) strategy for authenticating with
 [Netlify](https://www.netlify.com/) using the OAuth 2.0 API.
+ 
+[![Build Status](https://travis-ci.com/skogsmaskin/passport-netlify.svg?branch=master)](https://travis-ci.com/skogsmaskin/passport-netlify)
 
 This module lets you authenticate with Netlify in your Node.js applications.
 By plugging into Passport, Netlify authentication can be easily and
@@ -34,19 +33,18 @@ You will also need to configure a callback URL which matches the route in your a
 The Netlify authentication strategy authenticates users using a Netlify account
 and OAuth 2.0 tokens. The client ID and secret obtained when creating an
 application are supplied as options when creating the strategy. The strategy
-also requires a `verify` callback, which receives the access token and optional
-refresh token, as well as `profile` which contains the authenticated user's
-Netilify profile.  The `verify` callback must call `cb` providing a user to
-complete authentication.
+also requires a `verify` callback, which receives the access token, as well as 
+`profile` which contains the authenticated user's Netilify profile. 
+The `verify` callback must call `cb` providing a user to complete authentication.
 
 ```js
 const NetlifyStrategy = require('passport-netlify').Strategy;
 
 passport.use(new NetlifyStrategy({
     clientID: NETLIFY_CLIENT_ID,
-    clientSecret: NETLIFY_CLIENT_SERET,
+    clientSecret: NETLIFY_CLIENT_SECRET,
     callbackURL: "http://127.0.0.1:3000/auth/netlify/callback",
-    state: true // use OAuth2 state param to protect against csrf attacks
+    state: true // use OAuth2 state param to protect against csrf attacks (requries express-session)
   },
   (accessToken, refreshToken, profile, cb) => {
     User.findOrCreate({provider: 'netlify': providerId: profile.id }, (err, user) => {
@@ -56,9 +54,11 @@ passport.use(new NetlifyStrategy({
 ))
 ```
 
-*Note: While Netlify doesn't support refresh tokens (as for Jan. 2019), the verify
-callback still uses a second parameter `refreshToken` to conform to the OAuth2 standard. This makes it easier to 
-share a verify callback function for all `passport-oauth2` based authentications you use with Passport.js. The `refreshToken` will be undefined with this strategy, and should just be ignored.*
+*Note: While Netlify doesn't support refresh tokens (as for Jan. 2019),
+the verify callback still uses a second parameter `refreshToken` to conform
+to the OAuth2 standard. This makes it easier to  share a verify callback function
+for all `passport-oauth2` based authentications you use with Passport.js.
+The `refreshToken` will be undefined with this strategy, and should just be ignored.*
 
 #### Authenticate Requests
 

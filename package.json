@@ -1,6 +1,6 @@
 {
   "name": "passport-netlify",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
   "keywords": [],
   "main": "dist/passport-netlify.umd.js",
@@ -12,7 +12,7 @@
   "author": "Per-Kristian Nordnes <per.kristian.nordnes@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://www.github.com/skogsmaskin/passport-netlify"
+    "url": "git://github.com/github.com/skogsmaskin/passport-netlify"
   },
   "license": "MIT",
   "engines": {
