@@ -1,20 +1,38 @@
 {
   "name": "passport-netlify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
-  "keywords": [],
-  "main": "dist/passport-netlify.umd.js",
+  "keywords": [
+    "auth",
+    "authentication",
+    "identity",
+    "netlify",
+    "passport-strategy",
+    "passport",
+    "strategy"
+  ],
+  "bugs": {
+    "url": "http://github.com/skogsmaskin/passport-netlify/issues"
+  },
+  "main": "dist/passport-netlify.es5.js",
   "module": "dist/passport-netlify.es5.js",
   "typings": "dist/types/passport-netlify.d.ts",
   "files": [
     "dist"
   ],
   "author": "Per-Kristian Nordnes <per.kristian.nordnes@gmail.com>",
+  "homepage": "https://github.com/skogsmaskin/passport-netlify#readme",
   "repository": {
     "type": "git",
     "url": "git://github.com/github.com/skogsmaskin/passport-netlify"
   },
   "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
   "engines": {
     "node": ">=6.0.0"
   },
