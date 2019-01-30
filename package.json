@@ -1,6 +1,6 @@
 {
   "name": "passport-netlify",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "keywords": [
     "auth",
@@ -14,7 +14,7 @@
   "bugs": {
     "url": "http://github.com/skogsmaskin/passport-netlify/issues"
   },
-  "main": "dist/passport-netlify.es5.js",
+  "main": "dist/passport-netlify.umd.js",
   "module": "dist/passport-netlify.es5.js",
   "typings": "dist/types/passport-netlify.d.ts",
   "files": [
